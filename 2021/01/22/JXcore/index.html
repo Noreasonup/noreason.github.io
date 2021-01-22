@@ -149,59 +149,48 @@
                 </div>
 
                 <div id="main">
-                    
-<div id="archives">
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2021/1/22" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2021/1/22</div>
-                <a href="/2021/01/22/JXcore/">
-                    <h3></h3>
-                </a>
-                <div class="info">
-                    
+                     
+<link rel="stylesheet" href="/css/post-body.css">
+<div class="article">
+    <div>
+        <h1> </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2021/1/22
+        </span>
 
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2021/1/18" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2021/1/18</div>
-                <a href="/2021/01/18/article-title/">
-                    <h3>article title</h3>
-                </a>
-                <div class="info">
-                    
+        
 
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2021/1/18" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2021/1/18</div>
-                <a href="/2021/01/18/hello-world/">
-                    <h3>Hello World</h3>
-                </a>
-                <div class="info">
-                    
+        
+    </div>
 
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
+    <div class="content" v-pre>
+        <h1 id="Node-js-JXcore-打包"><a href="#Node-js-JXcore-打包" class="headerlink" title="Node.js JXcore 打包"></a>Node.js JXcore 打包</h1><p><strong>这篇文章主要是要向大家介绍 JXcore的安装 ,打包功能。</strong></p>
+<ol>
+<li>下载<br> Window 平台下载：Download(Windows x64 (V8))。<br> Linux/OSX 安装命令：<br> <code>$ curl https://raw.githubusercontent.com/jxcore/jxcore/master/tools/jx_install.sh | bash</code><br> 如果权限不足，可以使用以下命令：<br> <code>$ curl https://raw.githubusercontent.com/jxcore/jxcore/master/tools/jx_install.sh | sudo bash</code><br> windows平台的环境变量配置<br> 将JXcore的解压目录路径赋值下来(我的路径是D:\software\jx_win64v8)<br> 然后找到环境变量设置 -&gt; 系统环境变量 -&gt; 在Path环境变量里面加上复制的路径就ok了  </li>
+<li>检测<br> 以上步骤如果操作正确，使用以下命令，会输出版本号信息：<br> <code>$ jx --version</code><br> <code>v0.10.40</code>  </li>
+<li>打包<br> 接下来我们使用 jx 命令打包自己的项目，并指定 index.js 为 Node.js 项目的主文件：<br> <code>$ jx package index.js index</code><br> 以上命令执行成功，会生成以下两个文件：  <ul>
+<li>index.jxp 这是一个中间件文件，包含了需要编译的完整项目信息。  </li>
+<li>index.jx 这是一个完整包信息的二进制文件，可运行在客户端上。  </li>
+</ul>
+</li>
+<li>载入JX文件<br> Node.js 的项目运行：<br> <code>Node.js 的项目运行：</code><br> 使用 JXcore 编译后，我们可以使用以下命令来执行生成的 jx 二进制文件：<br> <code>$ jx index.jx command_line_arguments</code>  </li>
+</ol>
+
+    </div>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <div id="comment">
+        <div id="gitalk-container">
+        </div>
+    </div>
     
 </div>
-
                      
 <footer id="footer">
     <div class="footer-wrap">
@@ -264,6 +253,21 @@
             }
         }
     })
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'hexo-theme-particle',      // The repository of store comments,
+        owner: 'korilin',
+        admin: ['korilin'],
+        language: 'en',
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: true  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
 </script>
 
 </body>
