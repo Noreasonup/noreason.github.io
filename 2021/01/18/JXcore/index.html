@@ -171,7 +171,7 @@
     <div class="content" v-pre>
         <p><strong>这篇文章主要是要向大家介绍 JXcore的安装 ,打包功能。</strong></p>
 <ol>
-<li>下载<br> Window 平台下载：Download(Windows x64 (V8))。<br> Linux/OSX 安装命令：<br> <code>$ curl https://raw.githubusercontent.com/jxcore/jxcore/master/tools/jx_install.sh | bash</code><br> 如果权限不足，可以使用以下命令：<br> <code>$ curl https://raw.githubusercontent.com/jxcore/jxcore/master/tools/jx_install.sh | sudo bash</code><br> windows平台的环境变量配置<br> 将JXcore的解压目录路径赋值下来(我的路径是D:\software\jx_win64v8)<br> 然后找到环境变量设置 -&gt; 系统环境变量 -&gt; 在Path环境变量里面加上复制的路径就ok了  </li>
+<li>下载<br> Window 平台下载：Download(Windows x64 (V8))。<br> Linux/OSX 安装命令：<br> <code>$ curl https://raw.githubusercontent.com/jxcore/jxcore/master/tools/jx_install.sh | bash</code><br> 如果权限不足，可以使用以下命令：<br> <code>$ curl https://raw.githubusercontent.com/jxcore/jxcore/master/tools/jx_install.sh | sudo bash</code><br> windows平台的环境变量配置<br> 将JXcore的解压目录路径复制下来(我的路径是D:\software\jx_win64v8)<br> 然后找到环境变量设置 -&gt; 系统环境变量 -&gt; 在Path环境变量里面加上复制的路径就ok了  </li>
 <li>检测<br> 以上步骤如果操作正确，使用以下命令，会输出版本号信息：<br> <code>$ jx --version</code><br> <code>v0.10.40</code>  </li>
 <li>打包<br> 接下来我们使用 jx 命令打包自己的项目，并指定 index.js 为 Node.js 项目的主文件：<br> <code>$ jx package index.js index</code><br> 以上命令执行成功，会生成以下两个文件：  <ul>
 <li>index.jxp 这是一个中间件文件，包含了需要编译的完整项目信息。  </li>
