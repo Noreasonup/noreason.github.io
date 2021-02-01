@@ -149,75 +149,46 @@
                 </div>
 
                 <div id="main">
-                    
-<div id="archives">
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2021/2/1" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2021/2/1</div>
-                <a href="/2021/02/01/asyncErr/">
-                    <h3></h3>
-                </a>
-                <div class="info">
-                    
+                     
+<link rel="stylesheet" href="/css/post-body.css">
+<div class="article">
+    <div>
+        <h1> </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2021/2/1
+        </span>
 
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2021/1/18" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2021/1/18</div>
-                <a href="/2021/01/18/JXcore/">
-                    <h3>Node.js JXcore 打包</h3>
-                </a>
-                <div class="info">
-                    
+        
 
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2021/1/18" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2021/1/18</div>
-                <a href="/2021/01/18/article-title/">
-                    <h3>article title</h3>
-                </a>
-                <div class="info">
-                    
+        
+    </div>
 
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2021/1/18" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2021/1/18</div>
-                <a href="/2021/01/18/hello-world/">
-                    <h3>Hello World</h3>
-                </a>
-                <div class="info">
-                    
+    <div class="content" v-pre>
+        <h1 id="vue-cli中使用async缺少依赖时的处理方式"><a href="#vue-cli中使用async缺少依赖时的处理方式" class="headerlink" title="vue-cli中使用async缺少依赖时的处理方式"></a>vue-cli中使用async缺少依赖时的处理方式</h1><p><strong>今天,在vue-cli2.x项目中使用了async语法时报了个缺少依赖的错误</strong></p>
+<p><strong>具体错误如下</strong></p>
+<img src="http://image.noreason.top/async.png">
 
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
+<p><strong>经历笔者一番详细的思考(百度)后,发现,是core-js版本冲突导致</strong></p>
+<p><strong>根据提示,或者使用以下命令安装一下core-js即可</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --save core-js</span><br><span class="line">或者</span><br><span class="line">npm install core-js@3 -save</span><br></pre></td></tr></table></figure>
+
+
+
+    </div>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <div id="comment">
+        <div id="gitalk-container">
+        </div>
+    </div>
     
 </div>
-
                      
 <footer id="footer">
     <div class="footer-wrap">
@@ -280,6 +251,21 @@
             }
         }
     })
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'hexo-theme-particle',      // The repository of store comments,
+        owner: 'korilin',
+        admin: ['korilin'],
+        language: 'en',
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: true  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
 </script>
 
 </body>
